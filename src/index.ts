@@ -12,6 +12,9 @@ import compression from 'compression';
 import cors from 'cors';
 import { ErrorHandling } from '@utils/ErrorHandling';
 import { logMiddleware } from '@utils/Middleware';
+import { formatTime } from '@utils/Time';
+import { sendErrorResponse, sendSuccessResponse } from '@utils/Responses';
+import logger from '@utils/Logger';
 import fs from 'node:fs';
 
 const app = express();
@@ -61,9 +64,6 @@ app.use(cors()); // Enable Cross-Origin Resource Sharing
 
 // Routes
 import apiRoute from '@router/v1/index';
-import { formatTime } from '@utils/Time';
-import { sendErrorResponse, sendSuccessResponse } from '@utils/Responses';
-import logger from '@utils/Logger';
 
 app.use('/api/v1', apiRoute);
 

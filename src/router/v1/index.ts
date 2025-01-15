@@ -11,4 +11,10 @@ router
             }
         })
     });
+
+// Routes
+import infoRoute from '@router/v1/info';
+
+router.use('/info', infoRoute);
+
 export default router;
